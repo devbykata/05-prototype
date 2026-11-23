@@ -25,6 +25,7 @@ public class PlantillaProducto {
     /** Constructor de copia usado por copiar(). */
     private PlantillaProducto(PlantillaProducto otro) {
         this.nombre = otro.nombre;
+        this.precio = otro.precio;
         this.etiquetas = otro.etiquetas;
         this.atributos = new LinkedHashMap<>(otro.atributos);
     }

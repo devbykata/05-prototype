@@ -1,7 +1,7 @@
 # Bitácora de uso de IA — Patrón Prototype
 
 Aprendices: Katalina Ruiz / ______________________
-Ficha: 3409871  Fecha de inicio: ________
+Ficha: 3409871  Fecha de inicio: 23/11/2026
 
 > La bitácora es evidencia del ítem 18 de la lista de chequeo. Regístralo **todo**, también las respuestas de la IA que estaban mal.
 > Nunca pegues en una IA contraseñas, tokens, datos personales reales ni código que no tengas permiso de compartir.

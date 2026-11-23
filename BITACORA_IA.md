@@ -43,6 +43,13 @@ Copia una fila por cada consulta importante.
 
 ## 3. Jurado de IAs
 
+Consulté ChatGPT, Gemini y Copilot con el mismo prompt. Las tres encontraron los errores del patrón Prototype: 
+el precio no se copia, las etiquetas se comparten y el registro devuelve el mismo objeto.
+Las tres coincidieron en los problemas, pero Copilot propuso una prueba que no comprobaba correctamente 
+si las etiquetas eran independientes.
+Comparé las respuestas con las pruebas que ejecuté en IntelliJ. Decidí conservar las
+pruebas que realmente demostraban los errores.
+
 Envía el **mismo prompt** a tres herramientas distintas y compara.
 
 | Pregunta enviada | ChatGPT | Gemini | DeepSeek | ¿Quién acertó? ¿En qué discreparon? |
@@ -62,5 +69,33 @@ Envía el **mismo prompt** a tres herramientas distintas y compara.
 Describe por lo menos un caso en que la IA se equivocó, inventó algo o propuso un cambio peligroso. ¿Cómo te diste cuenta?
 
 ## 6. Reflexión final (5 a 10 líneas)
+R/= En esta actividad aprendí cómo funciona el patrón Prototype y para qué sirve.
+La inteligencia artificial me ayudó a entender el código y encontrar los errores más rápido.
+Al principio no sabía qué estaba fallando, pero con las pruebas pude identificar los problemas.
+Utilicé ChatGPT, Gemini y Copilot para comparar sus respuestas.
+No acepté todas las sugerencias sin revisarlas, porque algunas pruebas no demostraban bien el error.
+También aprendí a corregir el código y comprobar que funcionara con JUnit 5.
+Ahora entiendo que las copias deben ser independientes para no afectar al producto original.
 
 ¿Qué parte del trabajo aceleró la IA? ¿En qué momento decidiste **no** usarla y por qué? ¿Qué aprendiste del patrón que no sabías antes?
+### ¿Qué parte del trabajo aceleró la IA?
+La IA me ayudó a encontrar los errores más rápido, entender por qué fallaba el código y saber cómo podía corregirlos.
+
+### ¿En qué momento decidiste no usarla y por qué?
+Cuando tuve que comprobar si las respuestas eran correctas, preferí ejecutar las pruebas en IntelliJ, 
+porque no quería confiar solamente en lo que decía la IA.
+
+### ¿Qué aprendiste del patrón que no sabías antes?
+Aprendí que el patrón Prototype sirve para crear copias de objetos y que estas deben ser independientes 
+para que los cambios de una no afecten a la otra.
+
+
+
+
+## 7. Seguridad
+
+En el código original había un problema porque los productos compartían información. Si otra clase modificaba el precio o 
+las etiquetas de un producto,
+podía afectar a otros productos creados desde la misma plantilla.
+Esto podía causar cambios incorrectos en los datos. Para solucionarlo, 
+hicimos que cada producto tenga su propia copia independiente.

@@ -12,7 +12,7 @@ Antes de abrir cualquier IA, lee el README y el código. Escribe aquí qué erro
 
 | # | Archivo y línea | ¿Qué creo que está mal? | ¿Qué regla de negocio rompe? |
 |---|---|---|---|
-| 1 || | |
+| 1 |No identifique errores inicialmente| Sin sospechas|Antes de las pruebas |
 | 2 | | | |
 | 3 | | | |
 Antes de ejecutar las pruebas no había identificado ningún error en el código. Revisé el proyecto,
@@ -37,9 +37,9 @@ Copia una fila por cada consulta importante.
 
 | # | Herramienta (ChatGPT / Gemini / DeepSeek / Copilot / otra) | Prompt (resumen o enlace) | ¿Qué respondió? | ¿Era correcto? ¿Cómo lo verifiqué? | ¿Lo usé? (sí / no / modificado) |
 |---|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
+| 1 |ChatGPT |Analizar los errores del patron ProtoType |Encontro los 3 errores y propuso pruebas |Si,lo comprobe con JUnit 5 en Intellij |Si |
+| 2 | Gemini|El mismo de ChatGPT |Encontro los 3 errores y explico como comprobarlos |Si,coincidio con las pruebas realizadas | Si|
+| 3 |Copilot |El mismo de ChatGPT |Encontro lso 3 errores,pero una prueba no era adecuada |Parcialmente.Una prueba no demostraba que las etiquetas fueran independientes  |Modificado |
 
 ## 3. Jurado de IAs
 
@@ -52,21 +52,26 @@ pruebas que realmente demostraban los errores.
 
 Envía el **mismo prompt** a tres herramientas distintas y compara.
 
-| Pregunta enviada | ChatGPT | Gemini | DeepSeek | ¿Quién acertó? ¿En qué discreparon? |
+| Pregunta enviada | ChatGPT | Gemini | Copilot | ¿Quién acertó? ¿En qué discreparon? |
 |---|---|---|---|---|
-| | | | | |
+| Identificar los errores del patrón Prototype | Encontró los 3 errores | Encontró los 3 errores | Encontró los 3 errores | Las tres acertaron. Copilot propuso una prueba que no demostraba la independencia de las etiquetas. |
+
 
 ## 4. Errores encontrados y corregidos
 
-| # | Error | Prueba que lo demuestra (nombre del método de prueba) | Commit de la corrección | ¿Lo encontré yo, la IA o ambos? |
+| # | Error | Prueba que lo demuestra | Commit de corrección | ¿Quién lo encontró? |
 |---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
+| 1 | La copia no conservaba el precio | laCopiaTieneLosMismosValores() | fix(prototype): corrige la copia del precio | IA, comprobado con pruebas |
+| 2 | Las etiquetas de la copia afectaban al original | cambiarEtiquetasDeLaCopiaNoAfectaAlOriginal() | fix(prototype): corrige las etiquetas compartidas | IA, comprobado con pruebas |
+| 3 | El registro devolvía el mismo objeto | crearDosVecesDebeDevolverObjetosDistintos() | fix(prototype): entrega copias nuevas del registro | IA, comprobado con pruebas |
+
 
 ## 5. Lo que la IA hizo mal o no vio
 
 Describe por lo menos un caso en que la IA se equivocó, inventó algo o propuso un cambio peligroso. ¿Cómo te diste cuenta?
+R/= Copilot encontró los tres errores, pero propuso una prueba que solo comparaba las etiquetas del original y la copia. 
+Esa prueba podía pasar aunque las dos listas compartieran la misma información.
+Por eso utilicé otra prueba que agrega una etiqueta a la copia y comprueba que el producto original no cambie.
 
 ## 6. Reflexión final (5 a 10 líneas)
 R/= En esta actividad aprendí cómo funciona el patrón Prototype y para qué sirve.

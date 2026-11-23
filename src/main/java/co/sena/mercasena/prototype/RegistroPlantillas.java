@@ -17,6 +17,6 @@ public class RegistroPlantillas {
         if (prototipo == null) {
             throw new IllegalArgumentException("No existe la plantilla: " + clave);
         }
-        return prototipo;
+        return prototipo.copiar();
     }
 }

@@ -12,11 +12,16 @@ public class RegistroPlantillas {
         plantillas.put(clave, plantilla.copiar());
     }
 
+
     public PlantillaProducto crear(String clave) {
-        PlantillaProducto prototipo = plantillas.get(clave);
-        if (prototipo == null) {
-            throw new IllegalArgumentException("No existe la plantilla: " + clave);
+        PlantillaProducto plantillaRegistrada = plantillas.get(clave);
+
+        if (plantillaRegistrada == null) {
+            throw new IllegalArgumentException(
+                    "No existe la plantilla: " + clave
+            );
         }
-        return prototipo.copiar();
+        return plantillaRegistrada.copiar();
     }
+
 }

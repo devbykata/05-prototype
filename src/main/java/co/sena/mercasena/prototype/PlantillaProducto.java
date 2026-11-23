@@ -26,7 +26,7 @@ public class PlantillaProducto {
     private PlantillaProducto(PlantillaProducto otro) {
         this.nombre = otro.nombre;
         this.precio = otro.precio;
-        this.etiquetas = otro.etiquetas;
+        this.etiquetas = new ArrayList<>(otro.etiquetas);
         this.atributos = new LinkedHashMap<>(otro.atributos);
     }
 

@@ -1,7 +1,7 @@
 # Bitácora de uso de IA — Patrón Prototype
 
-Aprendices: ______________________ / ______________________
-Ficha: ________  Fecha de inicio: ________
+Aprendices: Katalina Ruiz / ______________________
+Ficha: 3409871  Fecha de inicio: ________
 
 > La bitácora es evidencia del ítem 18 de la lista de chequeo. Regístralo **todo**, también las respuestas de la IA que estaban mal.
 > Nunca pegues en una IA contraseñas, tokens, datos personales reales ni código que no tengas permiso de compartir.
@@ -12,9 +12,24 @@ Antes de abrir cualquier IA, lee el README y el código. Escribe aquí qué erro
 
 | # | Archivo y línea | ¿Qué creo que está mal? | ¿Qué regla de negocio rompe? |
 |---|---|---|---|
-| 1 | | | |
+| 1 || | |
 | 2 | | | |
 | 3 | | | |
+Antes de ejecutar las pruebas no había identificado ningún error en el código. Revisé el proyecto,
+pero todavía no tenía claro qué partes podían estar fallando.
+
+### Resultados de las pruebas iniciales
+- 4 pruebas ejecutadas.
+- 3 pruebas pasaron.
+- 1 prueba falló.
+- La prueba laCopiaTieneLosMismosValores() falló porque esperaba un precio de 18000, pero obtuvo null.
+
+### Resultados después de agregar las pruebas
+- Se ejecutaron 6 pruebas.
+- 3 pruebas pasaron y 3 fallaron.
+- Error 1: la copia no conserva el precio.
+- Error 2: las etiquetas de la copia afectan al original.
+- Error 3: el registro devuelve el mismo objeto.
 
 ## 2. Registro de interacciones con IA
 

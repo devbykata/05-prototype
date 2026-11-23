@@ -47,4 +47,31 @@ class PlantillaProductoTest {
         registro.registrar("cafe", cafe);
         assertEquals("Café de origen", registro.crear("cafe").getNombre());
     }
+
+    @Test
+    void crearDosVecesDebeDevolverObjetosDistintos() {
+        RegistroPlantillas registro = new RegistroPlantillas();
+
+        registro.registrar("cafe", cafe);
+
+        PlantillaProducto primera = registro.crear("cafe");
+        PlantillaProducto segunda = registro.crear("cafe");
+
+        assertNotSame(primera, segunda);
+    }
+
+
+    @Test
+    void cambiarEtiquetasDeLaCopiaNoAfectaAlOriginal() {
+        PlantillaProducto copia = cafe.copiar();
+
+        copia.agregarEtiqueta("nuevo");
+
+        assertEquals(1, cafe.getEtiquetas().size());
+        assertFalse(cafe.getEtiquetas().contains("nuevo"));
+    }
+
+
+
+
 }
